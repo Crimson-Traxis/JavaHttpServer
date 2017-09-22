@@ -22,33 +22,60 @@ public class Main {
 
     }
 
+    private static byte[] fileToByte (File file)
+    {
+        FileInputStream fileInputStream = null;
+        byte[] result = new byte[(int) file.length()];
+        try
+        {
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read(result);
+            fileInputStream.close();
+        }
+        catch (Exception e)
+        {
+
+        }
+        return result;
+    }
+
     public static void HandleSingleThreaded(Socket request) {
         System.out.println("Received Request ");
         try {
             BufferedReader httpRequestStream = new BufferedReader(new InputStreamReader(request.getInputStream()));
 
             String httpRequestString = "";
-            while((httpRequestString = httpRequestStream.readLine()) != null) {
-                if(httpRequestString.length() == 0) {
+            String line;
+            while((line = httpRequestStream.readLine()) != null) {
+                if(line.length() == 0) {
                     break;
                 }
-                System.out.println(httpRequestString);
+                httpRequestString += line + "\r\n";
             }
+            httpRequestString += "\r\n";
 
-            PrintWriter httpResponse = new PrintWriter(request.getOutputStream());
+            HTTPRequest httpRequest = new HTTPRequest(httpRequestString);
+
+            System.out.println(httpRequest.Path());
+
+            PrintStream httpResponse = new PrintStream(request.getOutputStream());
+
+            File file = new File(httpRequest.Path().substring(1,httpRequest.Path().length()));
 
             httpResponse.print("HTTP/1.1 200 \r\n");
-            httpResponse.print("Content-Type: text/plain \r\n");
+            httpResponse.print("Content-Type: text/html \r\n");
             httpResponse.print("Connection: close \r\n");
+            httpResponse.print("Content-length: " + file.length() + "\r\n");
+            httpResponse.print("Content-Disposition: attachment; filename=\"" + file.getName() + "\" \r\n");
             httpResponse.print("\r\n");
 
-            httpResponse.print("Hello From Java Server" + "\r\n");
+            httpResponse.write(fileToByte(file),0,(int)file.length());
 
             httpResponse.close();
             httpRequestStream.close();
             request.close();
         } catch (Exception ex) {
-
+            System.out.println(ex);
         }
     }
 
