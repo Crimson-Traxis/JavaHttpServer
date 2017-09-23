@@ -7,15 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e94b395-70bc-47f2-9948-4dd9762ffde3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/HttpServer_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HttpServer/Homework2/Main.class" afterPath="$PROJECT_DIR$/out/production/HttpServer/Homework2/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework2/HTTPRequest.java" afterPath="$PROJECT_DIR$/src/Homework2/HTTPRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework2/HTTPResponse.java" afterPath="$PROJECT_DIR$/src/Homework2/HTTPResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework2/Main.java" afterPath="$PROJECT_DIR$/src/Homework2/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -283,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506052987632</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finished Per Assignment Specs">
+      <created>1506128300522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1506128300522</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -333,7 +333,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Starting to make server multi threaded." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to make server multi threaded." />
+    <MESSAGE value="Finished Per Assignment Specs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Per Assignment Specs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
