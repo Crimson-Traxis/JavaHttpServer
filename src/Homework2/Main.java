@@ -82,7 +82,7 @@ public class Main {
 
                 HTTPRequest httpRequest = new HTTPRequest(httpRequestString);
 
-                File file = new File(httpRequest.Path().substring(1,httpRequest.Path().length()));
+                File file = new File("./"  + httpRequest.Path().substring(1,httpRequest.Path().length()));
 
                 HTTPResponse httpResponse = new HTTPResponse();
 
@@ -133,7 +133,7 @@ public class Main {
 
             HTTPRequest httpRequest = new HTTPRequest(httpRequestString);
 
-            File file = new File(httpRequest.Path().substring(1,httpRequest.Path().length()));
+            File file = new File("./"  + httpRequest.Path().substring(1,httpRequest.Path().length()));
 
             HTTPResponse httpResponse = new HTTPResponse();
 
